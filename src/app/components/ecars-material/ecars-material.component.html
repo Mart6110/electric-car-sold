@@ -1,0 +1,29 @@
+<section>
+    <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Tesla" #input>
+    </mat-form-field>
+    <table mat-table [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef="rank">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="rank"> Rank </th>
+            <td matRipple mat-cell *matCellDef="let element"> {{ element.rank }} </td>
+        </ng-container>
+        <ng-container matColumnDef="model">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="model"> Model </th>
+            <td matRipple mat-cell *matCellDef="let element"> {{ element.model }} </td>
+        </ng-container>
+        <ng-container matColumnDef="quantity">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="quantity"> Quantity </th>
+            <td matRipple mat-cell *matCellDef="let element"> {{ element.quantity }} </td>
+        </ng-container>
+        <ng-container matColumnDef="changeQuantityPercent">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="changeQuantityPercent"> Change (%) </th>
+            <td matRipple mat-cell *matCellDef="let element"> {{ element.changeQuantityPercent }} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
+
+</section>

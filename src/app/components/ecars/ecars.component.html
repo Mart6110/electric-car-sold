@@ -1,0 +1,21 @@
+<Section>
+    <table>
+        <thead>
+          <tr>
+            <th>Placering</th>
+            <th>Model</th>
+            <th>Antal</th>
+            <th>Ændring Antal (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let car of eCarsTop25$ | async; let i = index" [ngClass]="{'even': i % 2 === 0}">
+            <td>{{ car.rank }}</td>
+            <td>{{ car.model }}</td>
+            <td>{{ car.quantity }}</td>
+            <td>{{ car.changeQuantityPercent }}</td>
+          </tr>
+        </tbody>
+      </table>      
+</Section>
+  
