@@ -1,0 +1,20 @@
+button {
+    margin-right: 8px;
+}
+
+.mat-dialog-content-wrapper {
+    padding: 1rem;
+}
+
+.mat-mdc-form-field {
+    width: 100%;
+}
+
+.custom-button {
+    background-color: #00A699;
+    color: white;
+}
+
+.custom-button:hover {
+    background-color: lighten(#00A699, 10%);
+}

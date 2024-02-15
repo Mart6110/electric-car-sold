@@ -1,0 +1,41 @@
+section {
+    padding: 2rem;
+    margin-top: 64px
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mat-mdc-form-field {
+    width: 250px;
+}
+
+.action {
+    button {
+        margin-right: 10px;
+    }
+}
+
+.custom-button {
+    background-color: #00A699;
+    color: white;
+}
+
+.custom-button:hover {
+    background-color: lighten(#00A699, 10%);
+}
+
+.custom-button:disabled {
+    background-color: lightgray;
+}
+
+.custom-button-delete {
+    background-color: #FF5A5F;
+    color: white;
+}
+
+.custom-button-delete:hover {
+    background-color: lighten(#FF5A5F, 10%);
+}

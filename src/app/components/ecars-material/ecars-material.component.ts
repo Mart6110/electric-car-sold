@@ -13,7 +13,15 @@ import { MatRippleModule } from '@angular/material/core';
 @Component({
   selector: 'app-ecars-material',
   standalone: true,
-  imports: [CommonModule, MatFormFieldModule, MatInputModule, MatTableModule, MatSortModule, MatPaginatorModule, MatRippleModule],
+  imports: [
+    CommonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatRippleModule,
+  ],
   templateUrl: './ecars-material.component.html',
   styleUrl: './ecars-material.component.scss'
 })

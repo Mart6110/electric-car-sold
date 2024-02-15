@@ -1,0 +1,25 @@
+<div class="mat-dialog-content-wrapper">
+    <h2 mat-dialog-title>Edit Car</h2>
+    <div mat-dialog-content>
+        <mat-form-field>
+            <mat-label>Rank</mat-label>
+            <input matInput placeholder="Rank" [(ngModel)]="data.rank">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Model</mat-label>
+            <input matInput placeholder="Model" [(ngModel)]="data.model">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Quantity</mat-label>
+            <input matInput placeholder="Quantity" [(ngModel)]="data.quantity">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Change Quantity Percent</mat-label>
+            <input matInput placeholder="Change Quantity Percent" [(ngModel)]="data.changeQuantityPercent">
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-raised-button (click)="onCancelClick()">Cancel</button>
+        <button mat-raised-button color="primary" class="custom-button" (click)="onSaveClick()">Save</button>
+    </div>
+</div>

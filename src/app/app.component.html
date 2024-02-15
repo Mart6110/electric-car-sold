@@ -2,10 +2,21 @@
   <nav>
     <h1>{{title}}</h1>
     <ul>
-      <li><a routerLink="/ecars" routerLinkActive="active" ariaCurrentWhenActive="page"><button
-            mat-button>Ecars</button></a></li>
-      <li><a routerLink="/ecarsmaterial" routerLinkActive="active" ariaCurrentWhenActive="page"><button mat-button>Ecars
-            Material</button></a></li>
+      <li>
+        <a routerLink="/ecars" routerLinkActive="active" ariaCurrentWhenActive="page">
+          <button mat-button>Ecars</button>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/ecarsmaterial" routerLinkActive="active" ariaCurrentWhenActive="page">
+          <button mat-button>Ecars Material</button>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/cars" routerLinkActive="active" ariaCurrentWhenActive="page">
+          <button mat-button>cars</button>
+        </a>
+      </li>
     </ul>
   </nav>
   <router-outlet></router-outlet>
