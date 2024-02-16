@@ -13,6 +13,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
 import { MatGridListModule } from '@angular/material/grid-list';
+import {
+  MatSnackBar,
+  MatSnackBarHorizontalPosition,
+  MatSnackBarVerticalPosition,
+} from '@angular/material/snack-bar';
 
 import { CarService } from '../../services/car.service';
 
@@ -44,7 +49,7 @@ export class CarComponent implements OnInit, AfterViewInit {
   dataSource = new MatTableDataSource<Car>();
   displayedColumns: string[] = ['rank', 'model', 'quantity', 'changeQuantityPercent', 'action'];
 
-  constructor(private carService: CarService, private dialog: MatDialog) { }
+  constructor(private carService: CarService, private dialog: MatDialog, private _snackBar: MatSnackBar) { }
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -100,6 +105,17 @@ export class CarComponent implements OnInit, AfterViewInit {
         this.carService.updateCar(result).subscribe(() => {
           // Refresh car list after updating the car
           this.fetchCars();
+          this._snackBar.open(`${result.model} updated successfully`, 'Close', {
+            horizontalPosition: 'center',
+            verticalPosition: 'top',
+            duration: 5000
+          });
+        }, error => {
+          this._snackBar.open('Error updating car', 'Close', {
+            horizontalPosition: 'center',
+            verticalPosition: 'top',
+            duration: 5000
+          });
         });
       }
     });
