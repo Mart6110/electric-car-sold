@@ -1,25 +1,34 @@
 <div class="mat-dialog-content-wrapper">
+    <!-- Title of the dialog -->
     <h2 mat-dialog-title>Edit Car</h2>
     <div mat-dialog-content>
+        <!-- Form fields for editing car properties -->
         <mat-form-field>
             <mat-label>Rank</mat-label>
+            <!-- Input field for editing Rank -->
             <input matInput placeholder="Rank" [(ngModel)]="data.rank">
         </mat-form-field>
         <mat-form-field>
             <mat-label>Model</mat-label>
+            <!-- Input field for editing Model -->
             <input matInput placeholder="Model" [(ngModel)]="data.model">
         </mat-form-field>
         <mat-form-field>
             <mat-label>Quantity</mat-label>
+            <!-- Input field for editing Quantity -->
             <input matInput placeholder="Quantity" [(ngModel)]="data.quantity">
         </mat-form-field>
         <mat-form-field>
             <mat-label>Change Quantity Percent</mat-label>
+            <!-- Input field for editing Change Quantity Percent -->
             <input matInput placeholder="Change Quantity Percent" [(ngModel)]="data.changeQuantityPercent">
         </mat-form-field>
     </div>
+    <!-- Dialog actions -->
     <div mat-dialog-actions>
+        <!-- Button to cancel editing -->
         <button mat-raised-button (click)="onCancelClick()">Cancel</button>
+        <!-- Button to save changes -->
         <button mat-raised-button color="primary" class="custom-button" (click)="onSaveClick()">Save</button>
     </div>
 </div>

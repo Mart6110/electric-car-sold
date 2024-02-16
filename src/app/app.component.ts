@@ -10,16 +10,25 @@ import { UserService } from './services/user.service';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, MatMenuModule, MatButtonModule, MatSlideToggleModule],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    RouterLink,
+    RouterLinkActive,
+    MatMenuModule,
+    MatButtonModule,
+    MatSlideToggleModule,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'Cars sold';
+  title = 'Cars sold'; // Title of the application
 
   constructor(private userService: UserService) { }
 
+  // Method to toggle admin status
   toggleAdmin() {
-    this.userService.toggleAdmin();
+    this.userService.toggleAdmin(); // Call toggleAdmin method from UserService
   }
 }

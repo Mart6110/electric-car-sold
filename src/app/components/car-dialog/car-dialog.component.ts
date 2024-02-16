@@ -19,13 +19,15 @@ export class CarDialogComponent {
 
   constructor(
     public dialogRef: MatDialogRef<CarDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Car
+    @Inject(MAT_DIALOG_DATA) public data: Car // Injected data containing the car object
   ) { }
 
+  // Close the dialog without saving changes
   onCancelClick(): void {
     this.dialogRef.close();
   }
 
+  // Close the dialog and pass the modified car object back
   onSaveClick(): void {
     this.dialogRef.close(this.data);
   }

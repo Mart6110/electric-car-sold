@@ -1,26 +1,33 @@
 <section class="body">
+  <!-- Navigation section -->
   <nav>
+    <!-- Title and admin toggle -->
     <div>
-      <h1>{{title}}</h1>
-      <mat-slide-toggle color="warn" (change)="toggleAdmin()">Admin</mat-slide-toggle>
+      <h1>{{title}}</h1> <!-- Display the title -->
+      <mat-slide-toggle color="warn" (change)="toggleAdmin()">Admin</mat-slide-toggle> <!-- Toggle button for admin status -->
     </div>
+    <!-- Navigation links -->
     <ul>
+      <!-- Link to Electric cars page -->
       <li>
         <a routerLink="/electriccars" routerLinkActive="active" ariaCurrentWhenActive="page">
-          <button mat-button>Electric cars</button>
+          <button mat-button>Electric cars</button> <!-- Button for Electric cars page -->
         </a>
       </li>
+      <!-- Link to Cars page -->
       <li>
         <a routerLink="/cars" routerLinkActive="active" ariaCurrentWhenActive="page">
-          <button mat-button>Cars</button>
+          <button mat-button>Cars</button> <!-- Button for Cars page -->
         </a>
       </li>
+      <!-- Link to Cars admin page -->
       <li>
         <a routerLink="/carsadmin" routerLinkActive="active" ariaCurrentWhenActive="page">
-          <button mat-button>Cars - admin</button>
+          <button mat-button>Cars - admin</button> <!-- Button for Cars admin page -->
         </a>
       </li>
     </ul>
   </nav>
+  <!-- Outlet for rendering routed components -->
   <router-outlet></router-outlet>
 </section>

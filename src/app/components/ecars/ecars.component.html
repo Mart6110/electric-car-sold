@@ -1,21 +1,26 @@
 <Section>
-    <table>
-        <thead>
+  <!-- Table to display the top 25 electric cars -->
+  <table>
+      <!-- Table header -->
+      <thead>
           <tr>
-            <th>Placering</th>
-            <th>Model</th>
-            <th>Antal</th>
-            <th>Ændring Antal (%)</th>
+              <!-- Column headers -->
+              <th>Placering</th>
+              <th>Model</th>
+              <th>Antal</th>
+              <th>Ændring Antal (%)</th>
           </tr>
-        </thead>
-        <tbody>
+      </thead>
+      <!-- Table body -->
+      <tbody>
+          <!-- Loop through each car in the top 25 electric cars -->
           <tr *ngFor="let car of eCarsTop25$ | async; let i = index">
-            <td>{{ car.rank }}</td>
-            <td>{{ car.model }}</td>
-            <td>{{ car.quantity }}</td>
-            <td>{{ car.changeQuantityPercent }}</td>
+              <!-- Display car details -->
+              <td>{{ car.rank }}</td> <!-- Display car rank -->
+              <td>{{ car.model }}</td> <!-- Display car model -->
+              <td>{{ car.quantity }}</td> <!-- Display car quantity -->
+              <td>{{ car.changeQuantityPercent }}</td> <!-- Display change in quantity percent -->
           </tr>
-        </tbody>
-      </table>      
+      </tbody>
+  </table>
 </Section>
-  

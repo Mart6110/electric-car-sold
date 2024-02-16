@@ -16,9 +16,9 @@ import { Car } from '../../interfaces/car.model';
 
 @Component({
   selector: 'app-ecars-material',
-  standalone: true,
+  standalone: true, // Note: standalone property is not recognized in Angular, potential typo?
   imports: [
-    CommonModule,
+    CommonModule, // Import CommonModule for common Angular directives
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
@@ -26,41 +26,45 @@ import { Car } from '../../interfaces/car.model';
     MatPaginatorModule,
     MatRippleModule,
   ],
-  templateUrl: './ecars-material.component.html',
-  styleUrl: './ecars-material.component.scss'
+  templateUrl: './ecars-material.component.html', // HTML template file path
+  styleUrl: './ecars-material.component.scss' // SCSS style file path (Note: should be styleUrls)
 })
 export class EcarsMaterialComponent implements OnInit, AfterViewInit {
   cars: Car[] = [];
-  dataSource = new MatTableDataSource<Car>();
-  displayedColumns: string[] = ['rank', 'model', 'quantity', 'changeQuantityPercent'];
+  dataSource = new MatTableDataSource<Car>(); // Data source for the MatTable
+  displayedColumns: string[] = ['rank', 'model', 'quantity', 'changeQuantityPercent']; // Columns to display
 
   constructor(private carService: CarService) { }
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
+  @ViewChild(MatPaginator) paginator!: MatPaginator; // Reference to the MatPaginator component
+  @ViewChild(MatSort) sort!: MatSort; // Reference to the MatSort component
 
   ngOnInit(): void {
-    this.fetchCars();
+    this.fetchCars(); // Fetch cars data when component initializes
   }
 
   fetchCars() {
+    // Subscribe to the car service to fetch cars data
     this.carService.getCars().subscribe(cars => {
+      // Assign fetched cars data to the data source
       this.dataSource.data = cars;
     });
   }
 
   ngAfterViewInit() {
+    // Assign the paginator and sort to the data source after view initialization
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
 
   applyFilter(event: Event) {
+    // Filter the data source based on the input value
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
 
+    // Go to the first page of pagination if available
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
   }
-
 }
